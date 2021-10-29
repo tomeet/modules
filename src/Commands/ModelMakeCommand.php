@@ -34,7 +34,7 @@ class ModelMakeCommand extends GeneratorCommand
      */
     protected $description = 'Create a new model for the specified module.';
 
-    public function handle() : int
+    public function handle(): int
     {
         if (parent::handle() === E_ERROR) {
             return E_ERROR;
@@ -56,9 +56,14 @@ class ModelMakeCommand extends GeneratorCommand
     {
         $pieces = preg_split('/(?=[A-Z])/', $this->argument('model'), -1, PREG_SPLIT_NO_EMPTY);
 
-        $string = '';
+        if ($this->option('noprefix') == true) {
+            $string = '';
+        } else {
+            $string = strtolower($this->argument('module')) . '_';
+        }
+        
         foreach ($pieces as $i => $piece) {
-            if ($i+1 < count($pieces)) {
+            if ($i + 1 < count($pieces)) {
                 $string .= strtolower($piece) . '_';
             } else {
                 $string .= Str::plural(strtolower($piece));
@@ -92,6 +97,7 @@ class ModelMakeCommand extends GeneratorCommand
             ['fillable', null, InputOption::VALUE_OPTIONAL, 'The fillable attributes.', null],
             ['migration', 'm', InputOption::VALUE_NONE, 'Flag to create associated migrations', null],
             ['controller', 'c', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
+            ['noprefix', 'no-prefix', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
         ];
     }
 
@@ -129,14 +135,14 @@ class ModelMakeCommand extends GeneratorCommand
         $module = $this->laravel['modules']->findOrFail($this->getModuleName());
 
         return (new Stub('/model.stub', [
-            'NAME'              => $this->getModelName(),
-            'FILLABLE'          => $this->getFillable(),
-            'NAMESPACE'         => $this->getClassNamespace($module),
-            'CLASS'             => $this->getClass(),
-            'LOWER_NAME'        => $module->getLowerName(),
-            'MODULE'            => $this->getModuleName(),
-            'STUDLY_NAME'       => $module->getStudlyName(),
-            'MODULE_NAMESPACE'  => $this->laravel['modules']->config('namespace'),
+            'NAME' => $this->getModelName(),
+            'FILLABLE' => $this->getFillable(),
+            'NAMESPACE' => $this->getClassNamespace($module),
+            'CLASS' => $this->getClass(),
+            'LOWER_NAME' => $module->getLowerName(),
+            'MODULE' => $this->getModuleName(),
+            'STUDLY_NAME' => $module->getStudlyName(),
+            'MODULE_NAMESPACE' => $this->laravel['modules']->config('namespace'),
         ]))->render();
     }
 
@@ -181,7 +187,7 @@ class ModelMakeCommand extends GeneratorCommand
      *
      * @return string
      */
-    public function getDefaultNamespace() : string
+    public function getDefaultNamespace(): string
     {
         $module = $this->laravel['modules'];
 
