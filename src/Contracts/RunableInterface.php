@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Tomeet\Modules\Contracts;
 
 interface RunableInterface
 {

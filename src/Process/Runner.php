@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules\Process;
+namespace Tomeet\Modules\Process;
 
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Contracts\RunableInterface;
+use Tomeet\Modules\Contracts\RepositoryInterface;
+use Tomeet\Modules\Contracts\RunableInterface;
 
 class Runner implements RunableInterface
 {

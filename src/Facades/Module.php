@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Facades;
+namespace Tomeet\Modules\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

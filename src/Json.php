@@ -1,9 +1,9 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Tomeet\Modules;
 
 use Illuminate\Filesystem\Filesystem;
-use Nwidart\Modules\Exceptions\InvalidJsonException;
+use Tomeet\Modules\Exceptions\InvalidJsonException;
 
 class Json
 {

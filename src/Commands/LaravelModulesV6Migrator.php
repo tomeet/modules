@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Nwidart\Modules\Commands;
+namespace Tomeet\Modules\Commands;
 
 use Illuminate\Console\Command;
-use Nwidart\Modules\Contracts\RepositoryInterface;
-use Nwidart\Modules\Module;
+use Tomeet\Modules\Contracts\RepositoryInterface;
+use Tomeet\Modules\Module;
 
 class LaravelModulesV6Migrator extends Command
 {

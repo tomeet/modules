@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Support;
+namespace Tomeet\Modules\Support;
 
 class Stub
 {

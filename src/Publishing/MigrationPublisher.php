@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Publishing;
+namespace Tomeet\Modules\Publishing;
 
-use Nwidart\Modules\Migrations\Migrator;
+use Tomeet\Modules\Migrations\Migrator;
 
 class MigrationPublisher extends AssetPublisher
 {

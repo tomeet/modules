@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Traits;
+namespace Tomeet\Modules\Traits;
 
 trait MigrationLoaderTrait
 {

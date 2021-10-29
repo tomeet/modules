@@ -1,10 +1,10 @@
 <?php
 
-namespace Nwidart\Modules\Providers;
+namespace Tomeet\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Nwidart\Modules\Commands;
+use Tomeet\Modules\Commands;
 
 class ConsoleServiceProvider extends ServiceProvider
 {

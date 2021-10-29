@@ -1,11 +1,11 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Tomeet\Modules;
 
 use Illuminate\Support\ServiceProvider;
-use Nwidart\Modules\Providers\BootstrapServiceProvider;
-use Nwidart\Modules\Providers\ConsoleServiceProvider;
-use Nwidart\Modules\Providers\ContractsServiceProvider;
+use Tomeet\Modules\Providers\BootstrapServiceProvider;
+use Tomeet\Modules\Providers\ConsoleServiceProvider;
+use Tomeet\Modules\Providers\ContractsServiceProvider;
 
 abstract class ModulesServiceProvider extends ServiceProvider
 {

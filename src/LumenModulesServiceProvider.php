@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules;
+namespace Tomeet\Modules;
 
-use Nwidart\Modules\Support\Stub;
+use Tomeet\Modules\Support\Stub;
 
 class LumenModulesServiceProvider extends ModulesServiceProvider
 {

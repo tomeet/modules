@@ -1,8 +1,8 @@
 <?php
 
-namespace Nwidart\Modules\Contracts;
+namespace Tomeet\Modules\Contracts;
 
-use Nwidart\Modules\Module;
+use Tomeet\Modules\Module;
 
 interface ActivatorInterface
 {

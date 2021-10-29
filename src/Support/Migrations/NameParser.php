@@ -1,6 +1,6 @@
 <?php
 
-namespace Nwidart\Modules\Support\Migrations;
+namespace Tomeet\Modules\Support\Migrations;
 
 class NameParser
 {
