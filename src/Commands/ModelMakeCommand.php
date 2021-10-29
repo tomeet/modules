@@ -166,8 +166,10 @@ class ModelMakeCommand extends GeneratorCommand
     {
         return Str::studly($this->argument('model'));
     }
-
-
+    
+    /**
+     * @return mixed|string
+     */
     private function getTableName()
     {
         return $this->createMigrationName();
