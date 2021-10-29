@@ -56,11 +56,12 @@ class ModelMakeCommand extends GeneratorCommand
     {
         $pieces = preg_split('/(?=[A-Z])/', $this->argument('model'), -1, PREG_SPLIT_NO_EMPTY);
 
-        if ($this->option('noprefix') == true) {
+        if ($this->option('no-prefix') == true) {
             $string = '';
         } else {
             $string = strtolower($this->argument('module')) . '_';
         }
+
 
         foreach ($pieces as $i => $piece) {
             if ($i + 1 < count($pieces)) {
@@ -97,7 +98,7 @@ class ModelMakeCommand extends GeneratorCommand
             ['fillable', null, InputOption::VALUE_OPTIONAL, 'The fillable attributes.', null],
             ['migration', 'm', InputOption::VALUE_NONE, 'Flag to create associated migrations', null],
             ['controller', 'c', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
-            ['noprefix', 'no-prefix', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
+            ['no-prefix', 'no-prefix', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
         ];
     }
 
@@ -166,7 +167,7 @@ class ModelMakeCommand extends GeneratorCommand
     {
         return Str::studly($this->argument('model'));
     }
-    
+
     /**
      * @return mixed|string
      */
