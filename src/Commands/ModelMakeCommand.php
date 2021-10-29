@@ -61,7 +61,7 @@ class ModelMakeCommand extends GeneratorCommand
         } else {
             $string = strtolower($this->argument('module')) . '_';
         }
-        
+
         foreach ($pieces as $i => $piece) {
             if ($i + 1 < count($pieces)) {
                 $string .= strtolower($piece) . '_';
@@ -136,6 +136,7 @@ class ModelMakeCommand extends GeneratorCommand
 
         return (new Stub('/model.stub', [
             'NAME' => $this->getModelName(),
+            'TABLE' => $this->getTableName(),
             'FILLABLE' => $this->getFillable(),
             'NAMESPACE' => $this->getClassNamespace($module),
             'CLASS' => $this->getClass(),
@@ -164,6 +165,12 @@ class ModelMakeCommand extends GeneratorCommand
     private function getModelName()
     {
         return Str::studly($this->argument('model'));
+    }
+
+
+    private function getTableName()
+    {
+        return $this->createMigrationName();
     }
 
     /**
