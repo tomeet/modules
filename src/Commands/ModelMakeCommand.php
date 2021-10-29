@@ -98,7 +98,7 @@ class ModelMakeCommand extends GeneratorCommand
             ['fillable', null, InputOption::VALUE_OPTIONAL, 'The fillable attributes.', null],
             ['migration', 'm', InputOption::VALUE_NONE, 'Flag to create associated migrations', null],
             ['controller', 'c', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
-            ['no-prefix', 'no-prefix', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
+            ['noprefix', 'noprefix', InputOption::VALUE_NONE, 'Flag to create associated controllers', null],
         ];
     }
 
