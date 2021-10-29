@@ -56,7 +56,7 @@ class ModelMakeCommand extends GeneratorCommand
     {
         $pieces = preg_split('/(?=[A-Z])/', $this->argument('model'), -1, PREG_SPLIT_NO_EMPTY);
 
-        if ($this->option('no-prefix') == true) {
+        if ($this->option('noprefix') == true) {
             $string = '';
         } else {
             $string = strtolower($this->argument('module')) . '_';
