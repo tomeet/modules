@@ -10,6 +10,7 @@ class $CLASS$ extends Model
     use HasFactory;
 
     protected $table = '$TABLE$';
+    
     protected $fillable = $FILLABLE$;
     
     protected static function newFactory()
